@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "model": "CIDAS/clipseg-rd64-refined",
+  "revision": "999e0328d9e10b484360c477313983f9afdd7050",
+  "prompt": "hair",
+  "artifact": "hair-clipseg-refined-v1.onnx",
+  "sha256": "abe3fae448d5032943c58f1a15593506b4aa994b71b690cb3163383b3ee1e8bc",
+  "bytes": 291224791,
+  "opset": 17,
+  "input": {
+    "name": "pixels",
+    "shape": [
+      1,
+      3,
+      352,
+      352
+    ],
+    "type": "float32"
+  },
+  "output": {
+    "name": "hair_scores",
+    "shape": [
+      1,
+      1,
+      512,
+      512
+    ],
+    "type": "float32"
+  },
+  "preprocessing": {
+    "_processor_class": "CLIPSegProcessor",
+    "do_resize": true,
+    "do_rescale": true,
+    "do_normalize": true,
+    "size": {
+      "height": 352,
+      "width": 352
+    },
+    "resample": 2,
+    "rescale_factor": 0.00392156862745098,
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "do_convert_rgb": null,
+    "image_processor_type": "ViTImageProcessor"
+  },
+  "threshold": 0.5,
+  "torch": "2.8.0",
+  "onnx": "1.23.2",
+  "onnxruntime": "1.31.0",
+  "weights_license": "Apache-2.0",
+  "modification": "frozen hair text embedding, fixed batch and image geometry; vision/decoder-only ONNX export",
+  "download_url": "https://github.com/cilbe/conde-model-artifacts/releases/download/hair-clipseg-refined-v1/hair-clipseg-refined-v1.onnx"
+}
